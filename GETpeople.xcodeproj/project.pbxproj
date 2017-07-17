@@ -14,6 +14,7 @@
 		F4DA3C571F1D2AD900E1FC53 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DA3C551F1D2AD900E1FC53 /* LaunchScreen.storyboard */; };
 		F4DA3C621F1D2AD900E1FC53 /* GETpeopleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3C611F1D2AD900E1FC53 /* GETpeopleTests.swift */; };
 		F4DA3C6D1F1D2AD900E1FC53 /* GETpeopleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3C6C1F1D2AD900E1FC53 /* GETpeopleUITests.swift */; };
+		F4DA3C7B1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3C7A1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		F4DA3C681F1D2AD900E1FC53 /* GETpeopleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GETpeopleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DA3C6C1F1D2AD900E1FC53 /* GETpeopleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GETpeopleUITests.swift; sourceTree = "<group>"; };
 		F4DA3C6E1F1D2AD900E1FC53 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F4DA3C7A1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTableTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				F4DA3C531F1D2AD900E1FC53 /* Assets.xcassets */,
 				F4DA3C551F1D2AD900E1FC53 /* LaunchScreen.storyboard */,
 				F4DA3C581F1D2AD900E1FC53 /* Info.plist */,
+				F4DA3C7A1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift */,
 			);
 			path = GETpeople;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4DA3C7B1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift in Sources */,
 				F4DA3C4F1F1D2AD900E1FC53 /* PeopleViewController.swift in Sources */,
 				F4DA3C4D1F1D2AD900E1FC53 /* AppDelegate.swift in Sources */,
 			);
@@ -524,6 +528,7 @@
 				F4DA3C731F1D2AD900E1FC53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4DA3C741F1D2AD900E1FC53 /* Build configuration list for PBXNativeTarget "GETpeopleTests" */ = {
 			isa = XCConfigurationList;
@@ -532,6 +537,7 @@
 				F4DA3C761F1D2AD900E1FC53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F4DA3C771F1D2AD900E1FC53 /* Build configuration list for PBXNativeTarget "GETpeopleUITests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +546,7 @@
 				F4DA3C791F1D2AD900E1FC53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
