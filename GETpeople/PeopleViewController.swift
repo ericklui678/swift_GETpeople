@@ -10,7 +10,7 @@ import UIKit
 
 class PeopleViewController: UITableViewController {
   // people as an array of dictionaries
-  var people = [String]()
+  var people = [NSDictionary]()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,11 +18,9 @@ class PeopleViewController: UITableViewController {
       data, response, error in
       do {
         if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
-          if let results = jsonResult["results"] as? NSArray {
-            for person in results {
-              let personDict = person as! NSDictionary
-              self.people.append(personDict["name"]! as! String)
-            }
+          if let results = jsonResult["results"] as? [NSDictionary] {
+            self.people = results
+            print(self.people)
           }
         }
         DispatchQueue.main.async {
@@ -44,8 +42,23 @@ class PeopleViewController: UITableViewController {
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
-    cell.textLabel?.text = people[indexPath.row]
+    cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
+    cell.textLabel?.text = people[indexPath.row]["name"] as? String
     return cell
+  }
+  override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    performSegue(withIdentifier: "InfoSegue", sender: indexPath.row)
+  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let infoVC = segue.destination as! CharacterInfoViewController
+    let index = sender as! Int
+    infoVC.name = people[index]["name"] as? String
+    infoVC.gender = people[index]["gender"] as? String
+    infoVC.birth = people[index]["birth_year"] as? String
+    infoVC.mass = people[index]["mass"] as? String
+  }
+  @IBAction func unwindToPeopleVC(segue: UIStoryboardSegue) {
+    
   }
 }
 

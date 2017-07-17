@@ -10,7 +10,7 @@ import UIKit
 
 class FilmTableTableViewController: UITableViewController {
   
-  var films = [String]()
+  var films = [NSDictionary]()
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -18,11 +18,12 @@ class FilmTableTableViewController: UITableViewController {
       data, response, error in
       do {
         if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
-          if let results = jsonResult["results"] as? NSArray {
-            for film in results {
-              let filmDict = film as! NSDictionary
-              self.films.append(filmDict["title"]! as! String)
-            }
+          if let results = jsonResult["results"] as? [NSDictionary] {
+            self.films = results
+//            for film in results {
+//              let filmDict = film as! NSDictionary
+//              self.films.append(filmDict["title"]! as! String)
+//            }
           }
         }
         DispatchQueue.main.async {
@@ -41,7 +42,19 @@ class FilmTableTableViewController: UITableViewController {
   }
   override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = UITableViewCell()
-    cell.textLabel?.text = films[indexPath.row]
+    cell.accessoryType = UITableViewCellAccessoryType.detailDisclosureButton
+    cell.textLabel?.text = films[indexPath.row]["title"] as? String
     return cell
+  }
+  override func tableView(_ tableView: UITableView, accessoryButtonTappedForRowWith indexPath: IndexPath) {
+    performSegue(withIdentifier: "FilmDetailsSegue", sender: indexPath.row)
+  }
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    let index = sender as! Int
+    let detailVC = segue.destination as! FilmDetailViewController
+    detailVC.titleName = films[index]["title"] as? String
+    detailVC.release = films[index]["release_date"] as? String
+    detailVC.director = films[index]["director"] as? String
+    detailVC.opening = films[index]["opening_crawl"] as? String
   }
 }
