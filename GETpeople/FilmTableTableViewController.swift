@@ -14,27 +14,24 @@ class FilmTableTableViewController: UITableViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    let url = URL(string: "http://swapi.co/api/films")
-    let session = URLSession.shared
-    let task = session.dataTask(with: url!, completionHandler: {
+    StarWarsModel.getAllFilms(completionHandler: {
       data, response, error in
       do {
         if let jsonResult = try JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary {
           if let results = jsonResult["results"] as? NSArray {
-            for object in results {
-              let film = object as! NSDictionary
-              self.films.append(film["title"]! as! String)
-              DispatchQueue.main.async {
-                self.tableView.reloadData()
-              }
+            for film in results {
+              let filmDict = film as! NSDictionary
+              self.films.append(filmDict["title"]! as! String)
             }
           }
         }
+        DispatchQueue.main.async {
+          self.tableView.reloadData()
+        }
       } catch {
-        print("Error", error)
+        print(error)
       }
     })
-    task.resume()
   }
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()

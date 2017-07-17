@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F4CED8421F1D5043001F8A1D /* StarWarsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4CED8411F1D5043001F8A1D /* StarWarsModel.swift */; };
 		F4DA3C4D1F1D2AD900E1FC53 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3C4C1F1D2AD900E1FC53 /* AppDelegate.swift */; };
 		F4DA3C4F1F1D2AD900E1FC53 /* PeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4DA3C4E1F1D2AD900E1FC53 /* PeopleViewController.swift */; };
 		F4DA3C521F1D2AD900E1FC53 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F4DA3C501F1D2AD900E1FC53 /* Main.storyboard */; };
@@ -35,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		F4CED8411F1D5043001F8A1D /* StarWarsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StarWarsModel.swift; sourceTree = "<group>"; };
 		F4DA3C491F1D2AD900E1FC53 /* GETpeople.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GETpeople.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4DA3C4C1F1D2AD900E1FC53 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F4DA3C4E1F1D2AD900E1FC53 /* PeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				F4DA3C551F1D2AD900E1FC53 /* LaunchScreen.storyboard */,
 				F4DA3C581F1D2AD900E1FC53 /* Info.plist */,
 				F4DA3C7A1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift */,
+				F4CED8411F1D5043001F8A1D /* StarWarsModel.swift */,
 			);
 			path = GETpeople;
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 			files = (
 				F4DA3C7B1F1D3F2D00E1FC53 /* FilmTableTableViewController.swift in Sources */,
 				F4DA3C4F1F1D2AD900E1FC53 /* PeopleViewController.swift in Sources */,
+				F4CED8421F1D5043001F8A1D /* StarWarsModel.swift in Sources */,
 				F4DA3C4D1F1D2AD900E1FC53 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
